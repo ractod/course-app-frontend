@@ -7,7 +7,7 @@ import useMutation from "@hooks/useMutation";
 
 import { updateField } from "@services/adminServices";
 
-import FieldForm from "../fieldForm";
+import FieldForm from "../FieldForm";
 import { toast } from "react-toastify";
 
 const EditFieldModal = ({ open, onClose, field, setFields }) => {
