@@ -19,6 +19,7 @@ const FileProgress = ({ progress, fileName }) => {
         </div>
         <LinearProgress
           value={progress}
+          valueBuffer={progress}
           variant="buffer"
           classes={{
             indeterminate: "bg-gray-300",

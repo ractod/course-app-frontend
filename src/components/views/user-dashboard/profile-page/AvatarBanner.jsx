@@ -1,5 +1,4 @@
 "use client";
-// hook
 
 import Image from "next/image";
 

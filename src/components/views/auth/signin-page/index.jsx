@@ -1,6 +1,5 @@
 "use client";
 
-
 import Link from "next/link";
 
 import FormInput from "@components/elements/FormControls/FormInput";
@@ -18,6 +17,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { TfiLock } from "react-icons/tfi";
 
 import { LoadingButton } from "@mui/lab";
+import axios from "axios";
 import { Formik } from "formik";
 // toast
 import { toast } from "react-toastify";
@@ -28,11 +28,18 @@ const SigninPageTemplate = () => {
   const [mutateSignin, loading] = useMutation(signin, {
     onSuccess: (data) => {
       toast.success(data.message);
-      window.location.pathname = "/dashboard";
+      // window.location.pathname = "/dashboard";
     },
   });
 
-  const handleSubmit = (formData) => mutateSignin(formData);
+  const handleSubmit = (formData) => {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}p/user/auth/signin`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+      body: JSON.stringify(formData),
+    })
+  }
 
   return (
     <Formik
