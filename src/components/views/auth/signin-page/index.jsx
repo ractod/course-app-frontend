@@ -33,7 +33,7 @@ const SigninPageTemplate = () => {
   });
 
   const handleSubmit = (formData) => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}p/user/auth/signin`, {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/auth/signin`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
