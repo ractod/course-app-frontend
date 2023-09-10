@@ -17,9 +17,7 @@ import { HiOutlineMail } from "react-icons/hi";
 import { TfiLock } from "react-icons/tfi";
 
 import { LoadingButton } from "@mui/lab";
-import axios from "axios";
 import { Formik } from "formik";
-// toast
 import { toast } from "react-toastify";
 
 const SigninPageTemplate = () => {
@@ -28,18 +26,11 @@ const SigninPageTemplate = () => {
   const [mutateSignin, loading] = useMutation(signin, {
     onSuccess: (data) => {
       toast.success(data.message);
-      // window.location.pathname = "/dashboard";
+      window.location.pathname = "/dashboard";
     },
   });
 
-  const handleSubmit = (formData) => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/user/auth/signin`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify(formData),
-    })
-  }
+  const handleSubmit = (formData) => mutateSignin(formData)
 
   return (
     <Formik

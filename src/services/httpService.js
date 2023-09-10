@@ -8,7 +8,7 @@ const app = axios.create({
 });
 
 app.interceptors.response.use(
-  (response) => response,
+  (response) => response.data,
   (error) => {
     return Promise.reject(
       error.response?.data?.message || "مشکلی پیش آمده لطفا دوباره امتحان کنید!"

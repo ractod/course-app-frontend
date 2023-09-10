@@ -9,8 +9,8 @@ export const metadata = {
 };
 
 const page = async () => {
-  // const user = await getUser()
-  // if(user) return redirect("/dashboard")
+  const user = await getUser()
+  if(user) return redirect("/dashboard")
 
   return <SigninPage />;
 };
