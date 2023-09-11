@@ -30,7 +30,7 @@ const Students = () => {
         </When>
       </div>
       <div className="mt-5">
-        <StudentsTable students={students.toReversed().slice(0 ,3)} />
+        <StudentsTable students={students.slice(0 ,3)} />
       </div>
     </section>
   );
