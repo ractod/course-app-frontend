@@ -30,7 +30,7 @@ const PaymentsSection = () => {
           </Link>
         </When>
       </div>
-      <PaymentsTable payments={[...user?.payments.reverse().slice(0, 3)]} />
+      <PaymentsTable payments={user?.payments} />
     </section>
   );
 };

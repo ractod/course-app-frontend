@@ -6,7 +6,6 @@ import PaymentsTable from "@components/module/Tables/PaymentsTable";
 // hook
 import useUser from "@hooks/useUser";
 
-
 const UserPaymentsPage = () => {
   const { user, loading } = useUser();
 

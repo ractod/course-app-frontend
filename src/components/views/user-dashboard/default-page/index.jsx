@@ -12,6 +12,8 @@ import { MdOutlinePayment } from "react-icons/md";
 const UserDefaultPage = () => {
   const { user, loading } = useUser();
 
+  console.log(user)
+
   if (loading) {
     return (
       <main className="h-screen flex-1">

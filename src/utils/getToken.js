@@ -1,9 +1,10 @@
 "use server"
 import { cookies } from "next/headers"
 
-const getToken = () => {
+const getToken = async () => {
   const cookiesStore = cookies()
-  const token = cookiesStore.get("token")?.value
+  const token = await cookiesStore.get("token")?.value
+  console.log({token})
   return token
 }
 

@@ -16,9 +16,9 @@ app.interceptors.response.use(
   }
 );
 
-app.interceptors.request.use((request) => {
-  const token = getToken();
-  request.headers.Cookie = `token=${token}`;
+app.interceptors.request.use(async (request) => {
+  const token = await getToken();
+  request.headers.Authorization = `Bearer ${token}`;
   return request;
 });
 
